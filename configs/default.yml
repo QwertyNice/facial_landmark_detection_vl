@@ -1,0 +1,40 @@
+exp_name: 'experiment_name'
+out_dir: './checkpoints/'
+
+logging:
+    wandb:
+        logging: true
+        img_log_every: 100
+
+dataset:
+    root: 'path_to_dataset'
+    seed: 42
+    num_of_landmarks: 68
+    input_size: 224
+    padding:  # percentage of face bounding box
+        left: 15
+        top: 15
+        right: 15
+        bottom: 15
+    batch_size: 256
+    augmentations_train: 'default'
+    augmentations_val: 'default'
+    num_workers: 12
+
+train:
+    model_arch: 'mobileone'  #  onet || mini_pfld (without auxiliary branch) || mobileone (only s1 version)
+    pretrained_weights: ''  # path to pretrained weights
+    loss: 'wingloss'  # mse || wingloss || adawingloss || smoothl1loss
+    fp16: true
+    n_epoch: 50
+    learning_rate: 0.001
+    optimizer:
+        name: 'adamw'
+        weight_decay: 0.01
+        beta1: 0.9
+        beta2: 0.999
+        momentum: 0.9
+    lr_scheduler:
+        name: 'cosine'
+        step_size: 4
+        gamma: 0.1
