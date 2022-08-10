@@ -63,7 +63,12 @@ python calculate_ced.py --gt_path path_to_ground_true_pts --normalization_type b
 
 CED for Menpo dataset calculated by my models:
 <p align="center">
-  <img src="pics/ced.png" width="1000" alt="">
+  <img src="pics/menpo.png" width="1000" alt="">
+</p>
+
+CED for 300W dataset calculated by my models:
+<p align="center">
+  <img src="pics/300w.png" width="1000" alt="">
 </p>
 
 How the best model works:
